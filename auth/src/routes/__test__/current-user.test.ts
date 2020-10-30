@@ -9,7 +9,7 @@ it('should return the current user after successful login', async () => {
     .get('/api/users/currentUser')
     .set('Cookie', response.get('Set-Cookie'))
     .send({})
-    .expect(300)
+    .expect(200)
 
   expect(resp.body.currentUser.email).toBe('test@test.com')
 })
