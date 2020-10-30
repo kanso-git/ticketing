@@ -6,7 +6,8 @@
   "scripts": {
     "start": "ts-node src/index.ts --poll",
     "test": "jest --watchAll --no-cache",
-    "loadTest": "node src/test/manualTest.js"
+    "loadTest": "node src/test/manualTest.js",
+    "test:ci": "jest"
   },
   "jest": {
     "preset": "ts-jest",
