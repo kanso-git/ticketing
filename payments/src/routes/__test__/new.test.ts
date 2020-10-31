@@ -114,10 +114,11 @@ it('returns 200 when purchasing a valid order and creates a stripe charge using 
   expect(eventData.orderId).toBe(order.id)
 })
 
+/** 
 it.todo(
   'returns 200 when purchasing a valid order and creates a real stripe charge .. ',
 )
-
+**/
 /**
  * real verion needs the below:
  * remove the mock include in the test setup so our test  will use the real stripe code
