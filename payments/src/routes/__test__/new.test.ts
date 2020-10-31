@@ -115,7 +115,7 @@ it('returns 200 when purchasing a valid order and creates a stripe charge using 
 })
 
 it.todo(
-  'returns 200 when purchasing a valid order and creates a real stripe charge ',
+  'returns 200 when purchasing a valid order and creates a real stripe charge .. ',
 )
 
 /**
