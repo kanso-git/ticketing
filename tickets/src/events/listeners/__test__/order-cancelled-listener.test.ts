@@ -51,7 +51,7 @@ it('updates the ticket and set its order to null', async () => {
 
   //check ticket and find the orderId
   const ticket = await Ticket.findById(data.ticket.id)
-  expect(ticket!.orderId).toBeNull()
+  expect(ticket!.orderId).toBeUndefined()
 })
 
 it('acks the message once ticket has been updated', async () => {
@@ -60,7 +60,7 @@ it('acks the message once ticket has been updated', async () => {
 
   //check ticket and find the orderId
   const ticket = await Ticket.findById(data.ticket.id)
-  expect(ticket!.orderId).toBeNull()
+  expect(ticket!.orderId).toBeUndefined()
   expect(msg.ack).toHaveBeenCalled()
 })
 
@@ -70,7 +70,7 @@ it('publishes a ticket updated event', async () => {
 
   //check ticket and find the orderId
   const ticket = await Ticket.findById(data.ticket.id)
-  expect(ticket!.orderId).toBeNull()
+  expect(ticket!.orderId).toBeUndefined()
   expect(msg.ack).toHaveBeenCalled()
 
   expect(natsWrapper.client.publish).toHaveBeenCalled()
