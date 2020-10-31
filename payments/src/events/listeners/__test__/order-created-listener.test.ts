@@ -50,7 +50,7 @@ it('replicated the order info', async () => {
   expect(order!.price).toBe(data.ticket.price)
 })
 
-it('acks the message once order has been replicated', async () => {
+it('acks the message once the order has been replicated', async () => {
   const { listener, data, msg } = await setup()
   await listener.onMessage(data, msg)
 

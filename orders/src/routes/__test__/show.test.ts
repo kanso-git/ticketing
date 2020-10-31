@@ -24,14 +24,6 @@ async function createOrderForUser(i: number, user: UserPayload) {
   return order
 }
 
-it('returns bad request error when provided orderId is empty', async () => {
-  await request(app)
-    .get('/api/orders/')
-    .set('Cookie', global.signin())
-    .send()
-    .expect(400)
-})
-
 it('returns bad request error when provided orderId is not valid', async () => {
   await request(app)
     .get('/api/orders/invalidOrderId')

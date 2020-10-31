@@ -5,11 +5,10 @@ import { Order, OrderStatus } from '../../models/order'
 import { stripe } from '../../stripe'
 import { Payment } from '../../models/payment'
 import { natsWrapper } from '../../nats-wrapper'
-import e from 'express'
 import { PaymentCreatedEvent } from '@kansotickets/common'
 
 it('returns 401 when user is not authenticated', async () => {
-  request(app).post('/api/payments/').expect(401)
+  await request(app).post('/api/payments/').expect(401)
 })
 
 it('returns 400 when the order id is empty or not valid as mongo id ', async () => {
@@ -114,10 +113,11 @@ it('returns 200 when purchasing a valid order and creates a stripe charge using 
   expect(eventData.orderId).toBe(order.id)
 })
 
+/** 
 it.todo(
-  'returns 200 when purchasing a valid order and creates a real stripe charge ',
+  'returns 200 when purchasing a valid order and creates a real stripe charge .. ',
 )
-
+**/
 /**
  * real verion needs the below:
  * remove the mock include in the test setup so our test  will use the real stripe code
