@@ -7,7 +7,7 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: 'true'
 spec:
   rules:
-    - host: kanso-lab.xyz
+    - host: www.kanso-lab.xyz
       http:
         paths:
           - path: /api/users/?(.*)
