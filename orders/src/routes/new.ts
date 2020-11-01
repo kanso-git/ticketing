@@ -17,8 +17,6 @@ import { natsWrapper } from '../nats-wrapper'
 // an instance of express Router
 const router = express.Router()
 
-const EXPIRATION_WINDOW_SECONDS = (process.env
-  .EXPIRATION_WINDOW_SECONDS as unknown) as number
 /**
  * the custom validation check creates a kind of a strong assumption about the db storing the ticket
  */
@@ -33,6 +31,8 @@ router.post(
   ],
   validateRequestHandler,
   async (req: Request, res: Response) => {
+    const EXPIRATION_WINDOW_SECONDS = (process.env
+      .EXPIRATION_WINDOW_SECONDS as unknown) as number
     console.log(`orders EXPIRATION_WINDOW_SECONDS:${EXPIRATION_WINDOW_SECONDS}`)
     const { ticketId } = req.body
 

@@ -11,6 +11,7 @@ export interface UserPayload {
 jest.mock('../nats-wrapper')
 beforeAll(async () => {
   process.env.JWT_KEY = 'sdsds'
+  process.env.EXPIRATION_WINDOW_SECONDS = '40'
   //process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
   mongo = new MongoMemoryServer()
   const mongoUri = await mongo.getUri()
