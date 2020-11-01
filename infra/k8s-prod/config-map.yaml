@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: ticketing
 data:
-  SERVER_URL_BASE: 'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local'
+  SERVER_URL_BASE: 'http://www.kanso-lab.xyz/'
   NATS_URL: 'http://nats-srv:4222'
   NATS_CLUSTER_ID: ticketing
   EXPIRATION_WINDOW_SECONDS: '60'
