@@ -37,8 +37,7 @@ const userSchema = new mongoose.Schema(
   {
     toJSON: {
       transform(doc, ret) {
-        console.log(`toJSON:${JSON.stringify(ret, null, 3)}`)
-        delete ret.password
+        // delete ret.password
         ret.id = ret._id
         delete ret.__v
         delete ret._id
