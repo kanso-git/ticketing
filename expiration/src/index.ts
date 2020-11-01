@@ -26,7 +26,7 @@ const start = async () => {
 
     // on client close event recevied when SIGTERM OR SIGINT occured
     natsWrapper.client.on('close', () => {
-      console.log('NATS connection closed !')
+      console.log('NATS connection closed !!')
       process.exit()
     })
 
