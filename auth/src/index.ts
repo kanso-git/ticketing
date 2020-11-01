@@ -18,7 +18,7 @@ const start = async () => {
 
   app.listen(3000, () => {
     console.log(`Auth process.env.NODE_ENV:${process.env.NODE_ENV}`)
-    console.log('Listening on port 3000   ! ! !')
+    console.log('Listening on port 3000  ! ! !')
   })
 }
 
