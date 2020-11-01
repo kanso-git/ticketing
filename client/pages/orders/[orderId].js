@@ -27,7 +27,7 @@ const OrderShow = ({ order, currentUser }) => {
             token={({ id }) => doRequest({ token: id })}
             amount={order.ticket.price * 100}
             email={currentUser.email}
-            stripeKey="pk_test_51HhDXPI1XhZDfqCSkS3udKX4wfAZj8H8QUfkSXcgoDUfEEAybklc0tgaPqEC9Oczkw9DWL2u23HjTT26HjzNIySA00U5zGfkT5"
+            stripeKey={process.env.NEXT_PUBLIC_STRIPE_KEY}
           />
           {errors.length > 0 && (
             <div className="alert alert-danger">

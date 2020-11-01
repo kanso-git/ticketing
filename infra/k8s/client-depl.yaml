@@ -15,6 +15,19 @@ spec:
       containers:
         - name: client
           image: kansodocker/ticketing-client
+          env:
+            - name: SERVER_URL_BASE
+              valueFrom:
+                configMapKeyRef:
+                  name: ticketing # The ConfigMap this value comes from.
+                  key: SERVER_URL_BASE # The key to fetch.
+            - name: NEXT_PUBLIC_STRIPE_KEY
+              valueFrom:
+                configMapKeyRef:
+                  name: ticketing # The ConfigMap this value comes from.
+                  key: NEXT_PUBLIC_STRIPE_KEY # The key to fetch.
+          ports:
+            - containerPort: 3000
 ---
 apiVersion: v1
 kind: Service

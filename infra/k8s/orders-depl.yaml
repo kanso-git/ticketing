@@ -17,9 +17,15 @@ spec:
           image: kansodocker/orders
           env:
             - name: NATS_URL
-              value: htpp://nats-srv:4222
+              valueFrom:
+                configMapKeyRef:
+                  name: ticketing # The ConfigMap this value comes from.
+                  key: NATS_URL # The key to fetch.
             - name: NATS_CLUSTER_ID
-              value: ticketing
+              valueFrom:
+                configMapKeyRef:
+                  name: ticketing # The ConfigMap this value comes from.
+                  key: NATS_CLUSTER_ID # The key to fetch.
             - name: NATS_CLIENT_ID
               valueFrom:
                 fieldRef:
@@ -31,6 +37,11 @@ spec:
                 secretKeyRef:
                   name: jwt-secret
                   key: JWT_KEY
+            - name: EXPIRATION_WINDOW_SECONDS
+              valueFrom:
+                configMapKeyRef:
+                  name: ticketing # The ConfigMap this value comes from.
+                  key: EXPIRATION_WINDOW_SECONDS # The key to fetch.
 ---
 apiVersion: v1
 kind: Service
