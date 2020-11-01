@@ -1,12 +1,12 @@
 import axios from 'axios'
 
 //  baseURL: 'http://ingress-nginx-controller.kube-system.svc.cluster.local', //local machine
-//  baseURL: 'http://www.kanso-lab.xyz/', //digital ocean
+//  baseURL: 'http://www.kanso-lab.xyz', //digital ocean
 export default ({ req }) => {
   if (typeof window === 'undefined') {
     // We must be on the server
     return axios.create({
-      baseURL: 'http://www.kanso-lab.xyz/',
+      baseURL: process.env.SERVER_URL_BASE,
       headers: req.headers,
     })
   } else {
